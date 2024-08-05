@@ -27,14 +27,18 @@ Primary: #e67e22
 Tints: 
 #fdf2e9
 #fae5d3
+#eb984e
+
 Shades: #cf711f
 Accents:
 Greys:
 #6f6f6f (lightest grey allowed on #fdf2e9)
 #555
 #333
+#45260a
 
 -- 05 Shadows
+ box-shadow: 0 2.4rem 4.8rem rgb(0, 0, 0, 0.075);
 
 -- 06 Border-radius
 Default: 9px
@@ -142,6 +146,8 @@ body {
   margin-bottom: 1.6rem;
   letter-spacing: 0.75px;
 }
+
+.btn,
 .btn:link,
 .btn:visited {
   display: inline-block;
@@ -150,6 +156,11 @@ body {
   font-weight: 600;
   padding: 1.6rem 3.2rem;
   border-radius: 9px;
+
+  /* only necessary for .btn */
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
 
   /* Put transition on original "state" */
   /* transition: background-color 0.3s; */
@@ -180,6 +191,18 @@ body {
   /* border: 3px solid #fff; */
   /* Trick to add border inside */
   box-shadow: inset 0 0 0 3px #fff;
+}
+
+.btn--form {
+  background-color: #45260a;
+  color: #fdf2e9;
+  align-self: end;
+  padding: 1.2rem;
+}
+
+.btn--form:hover {
+  background-color: #fff;
+  color: #555;
 }
 
 .link:link,
@@ -217,6 +240,13 @@ body {
   display: flex;
   align-items: center;
   gap: 1.6rem;
+}
+
+*:focus {
+  outline: none;
+  /* outline: 4px dotted #e67e22;
+  outline-offset: 8px; */
+  box-shadow: 0 0 0 0.8rem rgba(230, 125, 34, 0.5);
 }
 
 /* HELPER CLASSES */
